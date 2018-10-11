@@ -1,123 +1,214 @@
-const TAGS = {
-  "": ["<em>", "</em>"],
-  _: ["<strong>", "</strong>"],
-  "~": ["<s>", "</s>"],
-  "\n": ["<br />"],
-  " ": ["<br />"],
-  "-": ["<hr />"]
-}
+function parse(content) {
+  // Regular Expressions
+  const h1 = /^#{1}[^#].*$/gm
+  const h2 = /^#{2}[^#].*$/gm
+  const h3 = /^#{3}[^#].*$/gm
+  const h4 = /^#{4}[^#].*$/gm
+  const h5 = /^#{5}[^#].*$/gm
+  const h6 = /^#{6}[^#].*$/gm
+  const bold = /\*\*[^\*\n]+\*\*/gm
+  const italics = /[^\*]\*[^\*\n]+\*/gm
+  const link = /\[[\w|\(|\)|\s|\*|\?|\-|\.|\,]*(\]\(){1}[^\)]*\)/gm
+  const lists = /^((\s*((\*|\-)|\d(\.|\))) [^\n]+))+$/gm
+  const unorderedList = /^[\*|\+|\-]\s.*$/
+  const unorderedSubList = /^\s\s\s*[\*|\+|\-]\s.*$/
+  const orderedList = /^\d\.\s.*$/
+  const orderedSubList = /^\s\s+\d\.\s.*$/
 
-/** Outdent a string based on the first indented line's leading whitespace
- *	@private
- */
-function outdent(str) {
-  return str.replace(RegExp("^" + (str.match(/^(\t| )+/) || "")[0], "gm"), "")
-}
+  // # Heading 1
+  if (h1.test(content)) {
+    const matches = content.match(h1)
 
-/** Encode special attribute characters to HTML entities in a String.
- *	@private
- */
-function encodeAttr(str) {
-  return (str + "")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-}
-
-/** Parse Markdown into an HTML String. */
-function parse(md, prevLinks) {
-  let tokenizer = /((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:\!\[([^\]]*?)\]\(([^\)]+?)\))|(\[)|(\](?:\(([^\)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(\-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm,
-    context = [],
-    out = "",
-    links = prevLinks || {},
-    last = 0,
-    chunk,
-    prev,
-    token,
-    inner,
-    t
-
-  function tag(token) {
-    var desc = TAGS[token.replace(/\*/g, "_")[1] || ""],
-      end = context[context.length - 1] == token
-    if (!desc) return token
-    if (!desc[1]) return desc[0]
-    context[end ? "pop" : "push"](token)
-    return desc[end | 0]
-  }
-
-  function flush() {
-    let str = ""
-    while (context.length) str += tag(context[context.length - 1])
-    return str
-  }
-
-  md = md
-    .replace(/^\[(.+?)\]:\s*(.+)$/gm, (s, name, url) => {
-      links[name.toLowerCase()] = url
-      return ""
+    matches.forEach(element => {
+      const extractedText = element.slice(1)
+      content = content.replace(element, "<h1>" + extractedText + "</h1>")
     })
-    .replace(/^\n+|\n+$/g, "")
-
-  while ((token = tokenizer.exec(md))) {
-    console.log(token)
-
-    prev = md.substring(last, token.index)
-    last = tokenizer.lastIndex
-    chunk = token[0]
-    if (prev.match(/[^\\](\\\\)*\\$/)) {
-      // escaped
-    }
-    // Code/Indent blocks:
-    else if (token[3] || token[4]) {
-      chunk =
-        '<pre class="code ' +
-        (token[4] ? "poetry" : token[2].toLowerCase()) +
-        '">' +
-        outdent(encodeAttr(token[3] || token[4]).replace(/^\n+|\n+$/g, "")) +
-        "</pre>"
-    }
-    // > Quotes, -* lists:
-    else if (token[6]) {
-      t = token[6]
-      if (t.match(/\./)) {
-        token[5] = token[5].replace(/^\d+/gm, "")
-      }
-      inner = parse(outdent(token[5].replace(/^\s*[>*+.-]/gm, "")))
-      if (t === ">") t = "blockquote"
-      else {
-        t = t.match(/\./) ? "ol" : "ul"
-        inner = inner.replace(/^(.*)(\n|$)/gm, "<li>$1</li>")
-      }
-      chunk = "<" + t + ">" + inner + "</" + t + ">"
-    }
-    // Images:
-    else if (token[8]) {
-      chunk = `<img src="${encodeAttr(token[8])}" alt="${encodeAttr(token[7])}">`
-    }
-    // Links:
-    else if (token[10]) {
-      out = out.replace("<a>", `<a href="${encodeAttr(token[11] || links[prev.toLowerCase()])}">`)
-      chunk = flush() + "</a>"
-    } else if (token[9]) {
-      chunk = "<a>"
-    }
-    // Headings:
-    else if (token[12] || token[14]) {
-      t = "h" + (token[14] ? token[14].length : token[13][0] === "=" ? 1 : 2)
-      chunk = "<" + t + ">" + parse(token[12] || token[15], links) + "</" + t + ">"
-    }
-    // `code`:
-    else if (token[16]) {
-      chunk = "<code>" + encodeAttr(token[16]) + "</code>"
-    }
-    // Inline formatting: *em*, **strong** & friends
-    else if (token[17] || token[1]) {
-      chunk = tag(token[17] || "--")
-    }
-    out += prev
-    out += chunk
   }
 
-  return (out + md.substring(last) + flush()).trim()
+  // # Heading 2
+  if (h2.test(content)) {
+    const matches = content.match(h2)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(2)
+      content = content.replace(element, "<h2>" + extractedText + "</h2>")
+    })
+  }
+
+  // # Heading 3
+  if (h3.test(content)) {
+    const matches = content.match(h3)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(3)
+      content = content.replace(element, "<h3>" + extractedText + "</h3>")
+    })
+  }
+
+  // # Heading 4
+  if (h4.test(content)) {
+    const matches = content.match(h4)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(4)
+      content = content.replace(element, "<h4>" + extractedText + "</h4>")
+    })
+  }
+
+  // # Heading 5
+  if (h5.test(content)) {
+    const matches = content.match(h5)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(5)
+      content = content.replace(element, "<h5>" + extractedText + "</h5>")
+    })
+  }
+  // # Heading 6
+  if (h6.test(content)) {
+    const matches = content.match(h6)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(6)
+      content = content.replace(element, "<h6>" + extractedText + "</h6>")
+    })
+  }
+
+  // **Bold**
+  if (bold.test(content)) {
+    const matches = content.match(bold)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(2, -2)
+      content = content.replace(element, "<strong>" + extractedText + "</strong>")
+    })
+  }
+
+  // *Italic*
+  if (italics.test(content)) {
+    const matches = content.match(italics)
+
+    matches.forEach(element => {
+      const extractedText = element.slice(2, -1)
+      content = content.replace(element, " <em>" + extractedText + "</em>")
+    })
+  }
+
+  // [I'm an inline-style link](https://www.google.com)
+  if (link.test(content)) {
+    const links = content.match(link)
+
+    links.forEach(element => {
+      const text = element.match(/^\[.*\]/)[0].slice(1, -1)
+      const url = element.match(/\]\(.*\)/)[0].slice(2, -1)
+
+      content = content.replace(element, '<a href="' + url + '">' + text + "</a>")
+    })
+  }
+
+  if (lists.test(content)) {
+    const matches = content.match(lists)
+
+    matches.forEach(list => {
+      const listArray = list.split("\n")
+
+      const formattedList = listArray
+        .map((currentValue, index, array) => {
+          if (unorderedList.test(currentValue)) {
+            currentValue = "<li>" + currentValue.slice(2) + "</li>"
+
+            if (!unorderedList.test(array[index - 1]) && !unorderedSubList.test(array[index - 1])) {
+              currentValue = "<ul>" + currentValue
+            }
+
+            if (!unorderedList.test(array[index + 1]) && !unorderedSubList.test(array[index + 1])) {
+              currentValue = currentValue + "</ul>"
+            }
+
+            if (unorderedSubList.test(array[index + 1]) || orderedSubList.test(array[index + 1])) {
+              currentValue = currentValue.replace("</li>", "")
+            }
+          }
+
+          if (unorderedSubList.test(currentValue)) {
+            currentValue = currentValue.trim()
+            currentValue = "<li>" + currentValue.slice(2) + "</li>"
+
+            if (!unorderedSubList.test(array[index - 1])) {
+              currentValue = "<ul>" + currentValue
+            }
+
+            if (!unorderedSubList.test(array[index + 1]) && unorderedList.test(array[index + 1])) {
+              currentValue = currentValue + "</ul></li>"
+            }
+
+            if (!unorderedSubList.test(array[index + 1]) && !unorderedList.test(array[index + 1])) {
+              currentValue = currentValue + "</ul></li></ul>"
+            }
+          }
+
+          if (orderedList.test(currentValue)) {
+            currentValue = "<li>" + currentValue.slice(2) + "</li>"
+
+            if (!orderedList.test(array[index - 1]) && !orderedSubList.test(array[index - 1])) {
+              currentValue = "<ol>" + currentValue
+            }
+
+            if (
+              !orderedList.test(array[index + 1]) &&
+              !orderedSubList.test(array[index + 1]) &&
+              !orderedList.test(array[index + 1])
+            ) {
+              currentValue = currentValue + "</ol>"
+            }
+
+            if (unorderedSubList.test(array[index + 1]) || orderedSubList.test(array[index + 1])) {
+              currentValue = currentValue.replace("</li>", "")
+            }
+          }
+
+          if (orderedSubList.test(currentValue)) {
+            currentValue = currentValue.trim()
+            currentValue = "<li>" + currentValue.slice(2) + "</li>"
+
+            if (!orderedSubList.test(array[index - 1])) {
+              currentValue = "<ol>" + currentValue
+            }
+
+            if (orderedList.test(array[index + 1]) && !orderedSubList.test(array[index + 1])) {
+              currentValue = currentValue + "</ol>"
+            }
+
+            if (!orderedList.test(array[index + 1]) && !orderedSubList.test(array[index + 1])) {
+              currentValue = currentValue + "</ol></li></ol>"
+            }
+          }
+
+          return currentValue
+        })
+        .join("")
+
+      content = content.replace(list, formattedList)
+    })
+  }
+
+  return content
+    .split("\n")
+    .map(line => {
+      if (
+        !h1.test(line) &&
+        !h2.test(line) &&
+        !h3.test(line) &&
+        !h4.test(line) &&
+        !h5.test(line) &&
+        !h6.test(line) &&
+        !unorderedList.test(line) &&
+        !unorderedSubList.test(line) &&
+        !orderedList.test(line) &&
+        !orderedSubList.test(line)
+      ) {
+        return line.replace(line, "<p>" + line + "</p>")
+      }
+    })
+    .join("")
 }
