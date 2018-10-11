@@ -20,6 +20,8 @@
     <script>
         hljs.initHighlightingOnLoad();
         let md = window.markdownit({
+            langPrefix: '',
+            html: true,
             highlight: function (str, lang) {
                 if (lang && hljs.getLanguage(lang)) {
                     try {
@@ -36,14 +38,10 @@
 
             let result = await fetch('https://raw.githubusercontent.com/sagelga/cheatsheet/master/docs/Python/Function/README.md').then(r => r.text())
 
-            document.write(md.render('# Hello'))
-            document.write(md.render('## Hello'))
-            document.write(md.render('### Hello'))
-            document.write(md.render('#### Hello'))
-            document.write(md.render('##### Hello'))
-            document.write(md.render('###### Hello'))
+            document.body.append(md.render('# Hello'))
 
-            document.write(md.render(result))
+            result = md.render(result)
+            document.body.innerHTML = result
 
 
         }
