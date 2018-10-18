@@ -24,9 +24,10 @@ See it all here : [https://docs.python.org/3/library/functions.html](https://doc
 | delattr()     | hash()      | memoryview() | set()      |                |
 
 ### Using abs()
+คือใช้ ค่าสมบูรณ์ ตามค่าของคณิตศาสตร์ ซึ่ง `abs()` จะ return ค่าท่างคณิตศาสตร์ออกมาเป็นค่าบวก<br>
 abs() is absolute in math language. Absoulte will returns a **positive** number from the value
 ```python
-How to use
+How to use (วิธีใช้)
 abs(<value>)
 
 Example
@@ -35,6 +36,7 @@ abs(-10)    # Returns 10
 ```
 
 ### Using chr()
+คือการเแปลงตัวเลข (จำนวนเต็ม) เป็นตัวอักษรโดยอ้างอิงจาก ASCII encoding<br>
 chr() converts number (integer only) to ASCII character.
 ```python
 How to use
@@ -46,6 +48,7 @@ chr(97) # Returns 'a'
 ```
 
 ### Using ord()
+คือการแปลงจากตัวอักษร (character) เป็นเลขจำนวนเต็มโดยอ้างอิงจาก ASCII encoding<br>
 ord() converts single ASCII character to number (integer).
 ```python
 How to use
@@ -57,6 +60,7 @@ ord('a') # Returns 97
 ```
 
 ### Using len()
+เป็นการหาค่าความยาวของตัวแปล อย่างเช่น ความยาวของ String หรือ list <- ได้เรียนใน Lecture ต่อๆไป<br>
 Mostly used with for loops. len is equal to length of something.
 ```python
 How to use
@@ -75,6 +79,7 @@ len([1, 2, 3, 4, 5]) # Returns 5
 ```
 
 ### Using max()
+จะ return ค่าที่ **มากที่สุด*** จาก argument จำนวน 2 ตัว<br>
 Function will return the **largest** number from 2 arguments
 ```python
 How to use
@@ -88,6 +93,7 @@ max(a, b) # Returns 20
 ```
 
 ### Using min()
+จะ return ค่าที่ **น้อยที่สุด** จาก argument จำนวน 2 ตัว<br>
 Function will return the **smallest** number from 2 arguments
 ```python
 How to use
@@ -101,6 +107,7 @@ min(a, b) # Returns 10
 ```
 
 ### Using pow()
+เป็นการคำนวนหาค่ายกกำลัง<br>
 Caculates a exponential values by using functions. This is absolutely optional way to calculate exponent
 ```python
 How to use
@@ -112,6 +119,7 @@ pow(2, 3, 2) # Returns 0 (as 2**3 % 2)
 ```
 
 ### Using round()
+เป็น Function ที่จะ return ค่าที่มีการปัดเศษเรียบร้อยแล้ว โดยที่ ถ้าเศษมีค่ามากกว่าหรือเท่ากับ 5 จะทำการปัดค่าขึ้น แต่ถ้าน้อยกว่า 5 จะทำการปัดค่าลง<br>
 Returns a number that will be rounded up (if >= .5) or round down (if < .5) <br>
 If you want to forced round up or round down, You can use math library to help
 ```python
@@ -124,6 +132,7 @@ round(12.153, 2) # Returns 12.15
 ```
 
 ### Using sorted()
+จะทำการ  return ค่าที่เรียบเรียงเรียบร้อยแล้ว ซึ่งการเรียงค่าของข้อมูลจะขึ้นกับชนิดของข้อมูล (datatype)<br> โดยจะมี Parameter เพิ่มเติม  2 ตัวคือ  reverse คือจะทำการเรียงค่าเหมือนเหมือนกันแต่จะกระทำในทิศตรงกันข้าม เช่น 1 2 3 เป็น 3 2 1 เป็นต้น <br>ส่วนอีก Parameter คือ key โดย parameter นี้จะเป็นตัวกำหนดกฎในการ sort ของเรา อย่างเช่น Sortตามความยาวของ String เป็นต้น<br>
 Returns a arrays of values that have been sorted, pending on their value types <br>
 Parameter reverse is when you want to sort in descending order <br>
 Parameter key is when you want to sort dictionary using only some data to determine
@@ -137,6 +146,7 @@ sorted(text) # Returns [1,2,3,4,5,6,7,8,9,10]
 ```
 
 ### Using chr() float() int()
+เป็น function ที่ใช้ในการทำ type casting ที่เราได้ผ่านมาใน lecture ก่อนหน้านี้
 ```python
 chr(<value>)
 float(<value>)
