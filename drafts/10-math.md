@@ -1,32 +1,34 @@
 # Math Library
-หลังจากน้องๆได้ลองเล่น function แบบ built-in กันไปแล้ว<br>
+หลังจากที่เราได้ลองใช้ function แบบ built-in กันไปแล้ว<br>
 
-สำหรับน้องๆที่ยังไม่เข้าใจว่า built-in function คืออะไร ก็ให้ไปเรียน concept ของมันซะก่อนนะครับ
+สำหรับคนที่ยังไม่เข้าใจว่า built-in function คืออะไร แนะนำให้ไปศึกษา Lecture ก่อนหน้าให้เข้าใจก่อนนะครับ
 
-แต่ใน lecture นี้ พี่มงก็จะทำการอธิบายเกี่ยวกับ library `math` นั่นเอง
+lecture นี้ เราจะมาทำความรู้จักกับ library `math` กันนะครับ
 
-ใน library นี้ก็จะมีฟังก์ชั่นที่น้องๆสามารถเอาไปช่วยคำนวณเลขแบบ advanced ได้โดยไม่ต้องเขียนวิธีการคำนวณเอง<br>
+ใน library นี้ก็จะมีฟังก์ชั่นที่เราสามารถเอาไปช่วยคำนวณเลขแบบ advanced ได้โดยไม่ต้องเขียนวิธีการคำนวณเอง<br>
 แต่ขั้นแรกต้องอธิบายว่า Library คืออะไรก่อน
 
 ### What is Library
 > In computer science, a library is a collection of non-volatile resources used by computer programs, often for software development. These may include configuration data, documentation, help data, message templates, pre-written code and subroutines, classes, values or type specifications. -- Wikipedia.com
 
+แปลแบบคล่าวๆ ก็คือ เป็นข้อมูลหรือ เครื่องมือที่มีผู้สร้างมาไว้อยู่แล้ว เราสามารถนำมาใช้งานได้เลยโดยไม่จำเป็นต้องเข้าใจการทำงานของ Algorithm ข้างใน
+
 ก็จะสรุปได้ว่า เป็น collection ที่มีฟังก์ชั่นที่เขียนไว้แล้ว ให้นักพัฒนาได้เอาไปใช้นั่นเอง
 
 ## Importing Library
-ถ้าน้องๆต้องการที่จะใช้ `library math` น้องๆก็จำเป็นที่ต้องโหลดมันซะก่อน โดยมีอยู่ 2 วิธีครับ
+ถ้าเราต้องการที่จะใช้ `library math` ก็จำเป็นที่ต้อง Download ตัว library ก่อน โดยมีอยู่ 2 วิธีครับ
 
 - โหลดตัว function ที่จะใช้จริง
 - โหลด function ทุกตัวที่อยู่ใน library
 
-แต่เนื่องจากว่า ถ้าน้องโหลดทุกตัวมา มันก็จะกินทรัพยากรเครื่องมากกว่า แต่ก็ไม่เป็นอะไรหรอกครับ ทรัพยากรเหลือเยอะแยะนะ อิอิ
+แต่เนื่องจากว่า ถ้า Download ทุกตัวมา มันก็จะกินทรัพยากรเครื่องมากกว่า
 
-### โหลดทุกตัว
+### Download ทุกตัว
 ```python
 import math
 ```
 
-หรือหากว่าน้องอยากที่จะเปลี่ยนชื่อ library ไปเป็นตามสไตล์ของน้องเอง ก็สามารถทำได้ครับ
+หรือหากว่าอยากที่จะเปลี่ยนชื่อ library ไปเป็นตามสไตล์ของเราเอง ก็สามารถทำได้ครับ
 
 ```python
 import math as quickmaffs
@@ -40,9 +42,9 @@ print(math.ceil(12.5))
 สังเกตว่าจะมีการเขียน `math` ไว้หน้าชื่อฟังก์ชั่นด้วยนะครับ
 
 
-!> แต่เปลี่ยนแล้ว เปลี่ยนกลับไม่ได้นาจาา ยกเว้นว่าจะ import ใหม่ครับ
+ แต่เปลี่ยนแล้ว เปลี่ยนกลับไม่ได้ ยกเว้นว่าจะ import ใหม่ครับ
 
-### โหลดบางตัว
+### Download เพียงบางตัว
 ใน ณ​ ตอนนี้อาจจะยังไม่ต้องเรียนก็ได้ครับ เพราะอันที่แล้วก็เพียงพอ แต่ถ้าอยากก็ไม่ว่าอะไรครับ
 
 ```python
@@ -57,36 +59,45 @@ from math import ceil
 ```python
 print(ceil(12.5))
 ```
+แทนที่จะเป็น
+```python
+print(math.ceil(12.5))
+```
 
 ## ฟังก์ชั่นที่ควรรู้ไว้
-เนื่องจากมันมีเยอะมากๆๆๆๆๆ พี่มงก็เลยเลือกอันที่ต้องใช้บ่อยๆมาแล้วกันครับ อันอื่นๆ น้องอาจจะเข้าไปดูได้ในเว็บไซต์ของ Python.org ครับ
+เนื่องจากมันมีเยอะมากๆ ทางเราเลยเลือกอันที่ต้องใช้บ่อยๆมาแล้วกันครับ อันอื่นๆ อาจจะเข้าไปดูได้ในเว็บไซต์ของ Python.org ครับ
 
 **Absolute Values**
+<br>ทำให้ค่าของตัาแปลตัวเลขเป็นเชิงบวกทั้งหมด<br>
 Make the integer or float becomes positive only.
 ```python
 math.fabs([value])
 ```
-or use built-in function `abs()` instead.
+or use built-in function `abs()` instead.<br>
+แต่เราก็สามารถใช้ `abs()` ที่เป็น Built-in function ก็ได้ครับ
 
-**Exponent**
+**Exponent**<br>
+การยกกำลังนั้นเองแต่เราก็สามารถให้ Operator `**` ก็ได้ครับ<br>
 or use exponent \*\* sign
 Returns value as x**y
 ```python
 math.pow([value], [exponent power])
 ```
 
-**Root of n**
+**Root of n**<br>
+คือการหา รากของ n  นั้นเอง<br>
 Returns value as x^1/2 (square root)
 ```python
 math.sqrt([float or integer])
 ```
 
-**Logarithms**
+**Logarithms**<br>
+คือการหาค่า log โดย paramenter แรก จะเป็นฐาน ส่วนอีกตัวจะเป็นเลข<br>
 Returns the value as log [base] [number]
 ```python
 math.log([number], [base])
 ```
-
+หรือเราสามารถใช้ ตัวสำเร็จรูป ก็ได้ <br>
 or use a predefined log level
 
 ```python
@@ -94,32 +105,37 @@ math.log2([number])
 math.log10([number])
 ```
 
-**Rounding Up**
+**Rounding Up**<br>
+เป็นการปัดเลขทศนิยมโดยจะเป็นการปัดขึ้นทั้งหมด <br>
 Returns value as integer (rounding up)
 ```python
 math.ceil([float or integer])
 ```
 
-**Rounding Down**
+**Rounding Down**<br>
+เป็นการปัดเลขทศนิยมโดยจะเป็นการปัดลงทั้งหมด <br>
 Returns value as integer (rounding down)
 ```python
 math.floor([float or integer])
 ```
 
-**Factorial**
+**Factorial**<br>
+เป็นการหา Factorial ของค่านั้นๆ <br>
 Returns the value of the value factorial
 ```python
 math.factorial([integer])
 ```
 
-**Calculate GCD**
+**Calculate GCD**<br>
+เป็นการหา หรม (หารร่วมมาก) ของตัวเลข 2 ตัว<br>
 Returns the GCD of integer A and B
 ```python
 math.gcd([integer_a], [integer_a])
 
 ```
 
-**Pi Constant**
+**Pi Constant**<br>
+เป็นค่าคงที่ของ PI <br>
 Returns the value of pi (more accurate than 22/7, but not for 355/113)
 ```python
 math.pi()
