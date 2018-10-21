@@ -1,4 +1,5 @@
 # Python Extra (Class)
+
 In the word **object**, it is like a features in a single item. <br>
 Like, printer for example. Printers can `scan` and `print` and `copy`. These are called objects <br>
 and printers is called **class**.

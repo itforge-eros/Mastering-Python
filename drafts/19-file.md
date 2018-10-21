@@ -1,4 +1,5 @@
 # File Manipulation
+
 ```python
 file_variable = open("file_name.txt", "w")
 
@@ -6,6 +7,7 @@ file_variable.write("Hello World")
 
 file_variable.close()
 ```
+
 Program need to close the file. Because when you write something, it keeps it in buffer, not the actual file. By closing it, the Python script will save the buffer (write) to the according file
 
 ```python
