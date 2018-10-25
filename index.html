@@ -6,47 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mastering Python</title>
-    <link rel="stylesheet" href="assets/css/darcula.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
 <body>
 
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">
+            <img src="assets/img/banner.png" alt="Logo">
+        </a>
+    </nav>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js" integrity="sha256-JdPG0DllQPmyIeUeYRUCvk6K3tY7C7RZyVKEcT56yzQ="
-        crossorigin="anonymous"></script>
-    <script src="assets/js/highlight.pack.js"></script>
-
-    <script>
-        hljs.initHighlightingOnLoad();
-        let md = window.markdownit({
-            langPrefix: '',
-            html: true,
-            highlight: function (str, lang) {
-                if (lang && hljs.getLanguage(lang)) {
-                    try {
-                        return '<pre class="hljs"><code>' +
-                            hljs.highlight(lang, str, true).value +
-                            '</code></pre>';
-                    } catch (__) { }
-                }
-
-                return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-            }
-        });
-        async function main() {
-
-            let result = await fetch('https://raw.githubusercontent.com/sagelga/cheatsheet/master/docs/Python/Function/README.md').then(r => r.text())
-
-            document.body.append(md.render('# Hello'))
-
-            result = md.render(result)
-            document.body.innerHTML = result
-
-
-        }
-        main()
-    </script>
+    <div id="header">
+        <img src="assets/img/header.png" id="header-text" alt="header">
+        <img src="assets/img/logo.png" id="header-logo" alt="logo">
+        <p id="header-content">Tutorial ในการเขียนภาษา Python<br>ที่เหมาะกับการเริ่มต้น</p>
+    </div>
+    <div id="why-python">
+        <div id="why-python-content">
+            <h1>ทำไมต้อง Python?</h1>
+        </div>
+    </div>
 </body>
 
 </html>

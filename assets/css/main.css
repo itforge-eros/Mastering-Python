@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Mitr:200,300,400,500,600,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=thai");
+
+/* Global Style */
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.blue {
+  display: inline;
+  color: #389fff;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  border-bottom: 0.5px solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  display: block;
+  flex-wrap: wrap;
+  top: 0;
+  z-index: 1112;
+}
+
+.navbar-brand {
+  font-family: "Raleway", sans-serif;
+  padding: 10px 40px;
+  display: inline-block;
+  font-weight: 500;
+  line-height: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.9);
+}
+.navbar-brand:focus {
+  outline: none;
+}
+
+.navbar-brand > img {
+  height: 30px;
+  display: inline-block !important;
+  vertical-align: top !important;
+}
+
+/* Header */
+.wrapper {
+  margin: 0 auto;
+  width: 75%;
+}
+
+#header {
+  padding-top: 15%;
+  height: 50vh;
+}
+
+#header-text {
+  position: absolute;
+  left: 15%;
+  width: 35%;
+}
+
+#header-logo {
+  position: absolute;
+  right: 20%;
+  width: 20%;
+}
+
+#header-content {
+  font-family: "Kanit", sans-serif;
+  position: absolute;
+  font-weight: 200;
+  font-size: 1.5em;
+  left: 18%;
+  margin-top: 15%;
+}
+
+/* Why Python */
+#why-python {
+  width: 100%;
+  padding-top: 10%;
+  background: url(../img/curve.svg), none;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#why-python-content {
+  background-color: #f0f3fe;
+  width: 100%;
+}
+
+#why-python-content > h1 {
+  font-family: "Kanit", sans-serif;
+  font-size: 4em;
+  font-weight: 300;
+  width: 100%;
+  text-align: center;
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.kanit {
+  font-family: "Kanit", sans-serif;
+}
+
+.mitr {
+  font-family: "Mitr", sans-serif;
+}
