@@ -2,51 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mastering Python</title>
-    <link rel="stylesheet" href="assets/css/darcula.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Mastering Python</title>
+	<link rel="stylesheet" href="css/darcula.css">
 </head>
 
 <body>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js" integrity="sha256-JdPG0DllQPmyIeUeYRUCvk6K3tY7C7RZyVKEcT56yzQ="
+		crossorigin="anonymous"></script>
+	<script src="js/highlight.pack.js"></script>
+
+	<script>
+		hljs.initHighlightingOnLoad();
+		let md = window.markdownit({
+			langPrefix: '',
+			html: true,
+			highlight: function (str, lang) {
+				if (lang && hljs.getLanguage(lang)) {
+					try {
+						return '<pre class="hljs"><code>' +
+							hljs.highlight(lang, str, true).value +
+							'</code></pre>';
+					} catch (__) { }
+				}
+
+				return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+			}
+		});
+		async function main() {
+
+			let result = await fetch('drafts/00-index.md').then(r => r.text())
+
+			document.body.append(md.render('# Hello'))
+
+			result = md.render(result)
+			document.body.innerHTML = result
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.2/markdown-it.min.js" integrity="sha256-JdPG0DllQPmyIeUeYRUCvk6K3tY7C7RZyVKEcT56yzQ="
-        crossorigin="anonymous"></script>
-    <script src="assets/js/highlight.pack.js"></script>
-
-    <script>
-        hljs.initHighlightingOnLoad();
-        let md = window.markdownit({
-            langPrefix: '',
-            html: true,
-            highlight: function (str, lang) {
-                if (lang && hljs.getLanguage(lang)) {
-                    try {
-                        return '<pre class="hljs"><code>' +
-                            hljs.highlight(lang, str, true).value +
-                            '</code></pre>';
-                    } catch (__) { }
-                }
-
-                return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-            }
-        });
-        async function main() {
-
-            let result = await fetch('drafts/00-index.md').then(r => r.text())
-
-            document.body.append(md.render('# Hello'))
-
-            result = md.render(result)
-            document.body.innerHTML = result
-
-
-        }
-        main()
-    </script>
+		}
+		main()
+	</script>
 </body>
 
 </html>
