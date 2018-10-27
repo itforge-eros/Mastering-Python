@@ -1,5 +1,5 @@
 # Logic Operator
-Logic Operator เป็นการจัดการตัวแปรประเภท boolean เพื่อการจัดการ logic นั่นเอง<br>
+Logic Operator เป็นการจัดการข้อมูลประเภท boolean เพื่อการจัดการ logic นั่นเอง<br>
 โดยเราจะได้ใช้งานอีก 1 รอบเมื่อได้เรียน Conditions ครับ
 
 ตัวอย่าง Logic Operator
