@@ -97,6 +97,17 @@ body {
   text-align: center;
 }
 
+/* Footer */
+#footer {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  background-color: #003a71;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
 .raleway {
   font-family: "Raleway", sans-serif;
 }
