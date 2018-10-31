@@ -10,11 +10,11 @@
         // Simple JavaScript Templating
         // John Resig - https://johnresig.com/ - MIT Licensed
         (function () {
-            var cache = {};
+            let cache = {};
             this.tmpl = function tmpl(str, data) {
                 // Figure out if we're getting a template, or if we need to
                 // load the template - and be sure to cache the result.
-                var fn = !/\W/.test(str) ?
+                let fn = !/\W/.test(str) ?
                     cache[str] = cache[str] ||
                     tmpl(document.getElementById(str).innerHTML) :
                     // Generate a reusable function that will serve as a template
@@ -37,20 +37,20 @@
                 return data ? fn(data) : fn;
             };
         })();
-        var routes = {};
+        let routes = {};
         //
         function route(path, templateId, controller) {
             routes[path] = { templateId: templateId, controller: controller };
         }
-        var el = null;
+        let el = null;
         function router() {
             // Lazy load view element:
             el = el || document.getElementById('view');
             // Current route url (getting rid of '#' in hash as well):
-            var url = location.hash.slice(1) || '/';
+            let url = location.hash.slice(1) || '/';
             console.log(url)
             // Get route by url:
-            var route = routes[url];
+            let route = routes[url];
             // Do we have both a view and a route?
             if (el && route.controller) {
                 // Render route template with John Resig's template engine:
