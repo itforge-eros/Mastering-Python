@@ -15,7 +15,7 @@ let md = window.markdownit({
 
 function router() {
   // Lazy load view element:
-  let el = document.getElementById("view")
+  let el = document.getElementById("content")
   // Current route url (getting rid of '#' in hash as well):
   let url = location.hash.slice(1) || "/"
   console.log(url)
