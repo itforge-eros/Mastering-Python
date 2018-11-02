@@ -63,8 +63,8 @@ My Name is              Kumamon naja
 ตัวอย่างเช่น
 ```python
 first_name = "Kumamon"
-print("My Name is %-20s naja" %first_name)   
-print("My Name is %20s naja" %first_name) 
+print("My Name is %-20s naja" % first_name)   
+print("My Name is %20s naja" % first_name) 
 ```
 ก็จะได้ผลลัพท์เหมือนด้านบนครับ
 
@@ -78,31 +78,24 @@ print("My Name is %20s naja" %first_name)
 ### String Cut Length
 หลังจากได้เรียนการ align กันมาแล้ว ก็จะบอกว่ายังมี function นึงที่เราอาจจะยังไม่เคยเจอ นั่นก็คือการตัดให้ได้ขนาด x ตัว
 
-ไปดูตัวอย่างกันครับ
-
-โดยปกติแล้ว เราก็จะใช้ [] แบบนี้
+ไปดูตัวอย่างกันครับ โดยปกติแล้ว เราก็จะใช้ [] แบบนี้
 ```python
 first_name = "Kumamon"
 print("My name is", first_name[:4])
 ```
 ก็จะได้ผลออกมาเป็น "My name is Kuma" นั่นเอง
 
-แต่เราเรียน % แล้ว เราก็ต้องใช้มันอ่ะเนอะ ก็เลยเป็นแบบนี้ไป
+แต่เราเรียน % แล้ว เราก็ต้องใช้มันอะเนอะ ก็เลยเป็นแบบนี้ไป
 
 ```python
 first_name = "Kumamon"
 print("My name is %s", %first_name[:4])
 ```
 
-แต่ก็ยังไม่[สุดๆไปเลย เหมือนเพลงของนูโว](https://www.youtube.com/watch?v=LKLH2E7uaMY) เพราะยังทำแบบนี้ได้อีกครับ
+แต่ก็ยังไม่สุด เพราะยังทำแบบนี้ได้อีกครับ
 ```python
 first_name = "Kumamon"
 print("My name is %.4s", %first_name)
-```
-
-แต่ต้องเตือนไว้ก่อน ว่าถ้าใส่ตัวเลขไปมากกว่าที่ array string มีอยู่ ก็จะเป็นแบบนี้ครับ
-```python
-
 ```
 
 ### Recap on usage
@@ -124,20 +117,16 @@ print("%-5.2s" %text)   # Prints out "AB   "
 ```
 
 **Integer Type**
-| Type      | %10d     | %-10d    | %.10d      | %-.10d     | %10.10d | %-10.-10d | %0.10d                          |
-| --------- | -------- | -------- | ---------- | ---------- | ------- | --------- | ------------------------------- |
-| For       | Aligning | Aligning | Cut String | Cut String | Both    | Both      | Aligning                        |
-| Alignment | Right    | Left     | Right      | Left       | Right   | Left      | Right
-(Add 0 instead of space) |
+| Type | %10d | %-10d | %010d |
+| --- | --- | --- | --- | --- |
+| For | Aligning | Aligning | Aligning & Filling Zeroes |
+| Alignment | Right | Left | Right |
 
 ```python
 number = 12345
-
-print("%10d" %number)       # Prints out "     12345"
-print("%-10d" %number)      # Prints out "12345     "
-print("%.3d" %number)       # Prints out "12345"
-print("%-.3d" %number)      # Prints out "12345"
-print("%0.10d" %number)     # Prints out 0000012345
+print("%10d" %number)  # Prints out "     12345"
+print("%-10d" %number) # Prints out "12345     "
+print("%010d" %number) # Prints out "0000012345"
 ```
 
 **Float Type**
@@ -149,12 +138,12 @@ print("%0.10d" %number)     # Prints out 0000012345
 ```python
 number = 123.4567
 
-print("%10f" %number)       # Prints out "123.456700"
-print("%-10f" %number)      # Prints out "123.456700"
-print("%.2f" %number)       # Prints out "123.46"
-print("%-.2f" %number)      # Prints out "123.46"
-print("%10.3f" %number)     # Prints out "   123.457"
-print("%-10.3f" %number)    # Prints out "123.457   "
+print("%10f" %number)    # Prints out "123.456700"
+print("%-10f" %number)   # Prints out "123.456700"
+print("%.2f" %number)    # Prints out "123.46"
+print("%-.2f" %number)   # Prints out "123.46"
+print("%10.3f" %number)  # Prints out "   123.457"
+print("%-10.3f" %number) # Prints out "123.457   "
 ```
 
 **Scientific Significant Type**
@@ -165,7 +154,7 @@ print("%e" %number) # Prints out '1.234567e+02'
 ```
 ----------
 
-## เปลี่ยน String ให้เป็นตัวเลข
+## เปลี่ยน String ให้เป็นค่าจำนวนเต็ม ASCII
 ![https://i.stack.imgur.com/X4yts.png](https://i.stack.imgur.com/X4yts.png)
 *Reference : https://i.stack.imgur.com/X4yts.png*
 
@@ -180,8 +169,8 @@ print(ord('A') + 1)     # Print out 66
 ### ASCII (Decimal) to String
 ```python
 print(chr(65))      # Print out 'A'
-print(chr(65+1))    # Print out 'B'
-print(chr(65+2))    # Print out 'C'
+print(chr(65 + 1))    # Print out 'B'
+print(chr(65 + 2))    # Print out 'C'
 
 var = 65
 print(chr(var)) # Print out 'A'
