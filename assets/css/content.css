@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Mitr:200,300,400,500,600,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=thai");
+
+/* Global Style */
+body {
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  border-bottom: 0.5px solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  display: block;
+  flex-wrap: wrap;
+  top: 0;
+  z-index: 1112;
+}
+
+.navbar-brand {
+  font-family: "Raleway", sans-serif;
+  padding: 10px 40px;
+  display: inline-block;
+  font-weight: 500;
+  line-height: inherit;
+  white-space: nowrap;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.9);
+}
+.navbar-brand:focus {
+  outline: none;
+}
+
+.navbar-brand > img {
+  height: 30px;
+  display: inline-block !important;
+  vertical-align: top !important;
+}
+
+/* Header */
+#header {
+  font-family: "Kanit", sans-serif;
+  margin-top: 50px;
+  height: 40vh;
+  background-color: #389fff;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "a a";
+  color: #fff;
+}
+
+#header-text-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-text-content {
+  text-align: right;
+}
+#header-text-content > h1 {
+  margin-block-start: 0;
+  margin-block-end: -0.3em;
+  font-weight: 300;
+  font-size: 4em;
+}
+
+#header-text-content > p {
+  margin-right: 0;
+  margin-left: auto;
+  width: 80%;
+  font-weight: 200;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.header-image-wrapper {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.header-image {
+  max-height: 100%;
+  opacity: 0.2;
+}
+
+@media (min-width: 1200px) {
+  #header {
+    padding: 0 15%;
+  }
+
+  #header-text-content > p {
+    width: 70%;
+  }
+}
+
+/* Content */
+
+.container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "a a a";
+}
+
+#menu {
+  padding: 1.5em;
+  grid-column: span 1;
+  font-family: "Raleway", sans-serif;
+  background-color: #eef7ff;
+}
+
+.menu-header {
+  margin: 1em 0;
+  font-size: 1.4em;
+}
+
+.menu-child {
+  margin: 0.4em 0;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.menu-child > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-child > a:focus {
+  outline: none;
+}
+
+.menu-child > a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+#content {
+  grid-column: span 2;
+  font-family: "Kanit", sans-serif;
+  padding-top: 1em;
+  padding-bottom: 5em;
+}
+
+#content > * {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#content > h1 {
+  font-weight: 400;
+}
+
+#content > h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+#content > p > strong {
+  font-weight: 400;
+}
+
+#content > p,
+li {
+  font-weight: 200;
+}
+
+#content img {
+  width: 100%;
+  margin: 1em;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+/* Footer */
+#footer {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  background-color: #003a71;
+  display: grid;
+  grid-template-areas: "a a a";
+  align-items: center;
+  height: 100px;
+}
+
+#footer > .child:first-child {
+  padding-left: 2em;
+}
+
+#footer > .child:first-child > div {
+  display: inline;
+}
