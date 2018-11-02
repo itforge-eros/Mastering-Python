@@ -11,6 +11,12 @@ body {
   color: #389fff;
 }
 
+h1,
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 /* Navbar */
 .navbar {
   width: 100%;
@@ -51,7 +57,7 @@ body {
 
 #header {
   padding-top: 15%;
-  height: 50vh;
+  padding-bottom: 30%;
 }
 
 #header-text {
@@ -80,7 +86,6 @@ body {
   width: 100%;
   padding-top: 10%;
   background: url(../img/curve.svg), none;
-  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -95,6 +100,197 @@ body {
   font-weight: 300;
   width: 100%;
   text-align: center;
+  margin: 1em 0;
+}
+
+#why-python-container {
+  display: flex;
+  background-color: #f0f3fe;
+  flex-wrap: wrap;
+  width: 100%;
+  align-content: space-between;
+  padding-bottom: 6em;
+}
+
+#why-python-container > div {
+  text-align: center;
+  flex: 1 1;
+}
+
+#why-python-container > div:first-child > p {
+  margin-left: 30%;
+  text-indent: 3em;
+  text-align: justify;
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-size: 1.2em;
+}
+
+#why-python-container > div:last-child > img {
+  width: 80%;
+}
+
+#why-python-bottom {
+  position: absolute;
+  margin-left: 2em;
+  margin-top: -42px;
+}
+
+#why-python-bottom > img {
+  width: 200px;
+}
+
+#before-start {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 8em;
+  background: #003a71 url("../img/before.svg") no-repeat;
+  background-size: cover;
+}
+
+#before-start-title {
+  width: 100%;
+  padding: 1.5em 0;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1em;
+}
+
+#before-start-title > h1,
+h2 {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+}
+
+#before-start-title > h1 {
+  font-size: 2.5em;
+}
+
+#before-start-title > h2 {
+  font-size: 2.1em;
+}
+
+#before-start-content {
+  display: grid;
+  grid-template-areas: "a a a";
+  height: 100px;
+}
+
+#before-start-content-box {
+  font-family: "Kanit", sans-serif;
+  padding: 0 1em;
+  text-align: center;
+}
+
+#before-start-content-box:first-child {
+  padding-left: 2em;
+}
+
+#before-start-content-box:last-child {
+  padding-right: 2em;
+}
+
+#before-start-content-box > h1 {
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
+#before-start-content-box > p {
+  color: #fff;
+  font-weight: 100;
+}
+
+#before-start-content-line {
+  width: 100%;
+  min-height: 2px;
+  margin: 0.5em 0;
+  background-color: #fff;
+}
+
+/* Lectures */
+
+#lecture {
+  width: 100%;
+  padding: 3em 0 6em 0;
+}
+
+#lecture-title {
+  width: 100%;
+  padding: 1.5em 0;
+  text-align: center;
+  color: #636363;
+  margin-bottom: 1em;
+}
+
+#lecture-title > h1,
+h2 {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+}
+
+#lecture-title > h1 {
+  margin-top: -0.4em;
+  margin-bottom: 0.5em;
+  font-size: 5em;
+}
+
+#lecture-title > h2 {
+  font-size: 2.1em;
+}
+
+#lecture-title > h2 > div {
+  display: inline;
+}
+
+.lecture-chapter-title {
+  width: 70%;
+  margin: 0.5em auto;
+  font-family: "Kanit", sans-serif;
+  color: #636363;
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.lecture-chapter-grid {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "a a a";
+}
+
+.lecture-chapter-box {
+  margin: 1em;
+  text-align: center;
+  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.25);
+  border-top: solid 1.5em;
+}
+
+.lecture-chapter-box > p {
+  font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-size: 1.3em;
+}
+
+.lecture-chapter-box > img {
+  margin-top: 1.5em;
+  margin-bottom: -10px;
+  width: 33%;
+}
+
+.lecture-chapter-box-1 {
+  border-top-color: #389fff;
+  border-radius: 1em;
+}
+
+.lecture-chapter-box-2 {
+  border-top-color: #00ccba;
+  border-radius: 1em;
+}
+
+.lecture-chapter-box-3 {
+  border-top-color: #f598eb;
+  border-radius: 1em;
 }
 
 /* Footer */
@@ -103,9 +299,17 @@ body {
   font-family: "Raleway", sans-serif;
   background-color: #003a71;
   display: grid;
-  justify-content: center;
+  grid-template-areas: "a a a";
   align-items: center;
   height: 100px;
+}
+
+#footer > .child:first-child {
+  padding-left: 2em;
+}
+
+#footer > .child:first-child > div {
+  display: inline;
 }
 
 .raleway {
@@ -118,4 +322,21 @@ body {
 
 .mitr {
   font-family: "Mitr", sans-serif;
+}
+
+/* Color */
+.light-green {
+  color: #6df0c2;
+}
+
+.dark-yellow {
+  color: #ffdb0b;
+}
+
+.light-purple {
+  color: #ff00ff;
+}
+
+.light-blue {
+  color: #389fff;
 }

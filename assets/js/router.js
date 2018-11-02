@@ -23,7 +23,12 @@ function router() {
 }
 
 async function render(url, el) {
-  let result = await fetch(`../drafts/${url}.md`).then(r => r.text())
+  let result = await fetch(`../drafts/${url}.md`).then(r => {
+    if (r.status === 200) {
+      return r.text()
+    }
+    return "Not Found!"
+  })
 
   result = await md.render(result)
   el.innerHTML = result
