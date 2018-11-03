@@ -22,8 +22,8 @@ function router() {
 }
 
 async function render(url, el) {
-  url = url || "00-index"
-  let result = await fetch(`../drafts/${url}.md`).then(r => {
+  url = url || "index"
+  let result = await fetch(`../data/content/${url}.md`).then(r => {
     if (r.status === 200) {
       return r.text()
     }
@@ -48,6 +48,7 @@ async function render(url, el) {
   headingTitle.innerText = header.title
   headingDescription.innerHTML = header.description
   headingIcon.setAttribute("src", `../assets/img/icon/${header.icon}`)
+  headingIcon.setAttribute("class", "header-image")
 
   result = await md.render(result)
   el.innerHTML = result

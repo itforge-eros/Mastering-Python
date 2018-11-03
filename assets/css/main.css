@@ -100,7 +100,7 @@ h2 {
   font-weight: 300;
   width: 100%;
   text-align: center;
-  margin: 1em 0;
+  padding: 1em 0;
 }
 
 #why-python-container {
@@ -173,7 +173,6 @@ h2 {
 #before-start-content {
   display: grid;
   grid-template-areas: "a a a";
-  height: 100px;
 }
 
 #before-start-content-box {
@@ -301,6 +300,24 @@ h2 {
 .lecture-chapter-box-3 {
   border-top-color: #f598eb;
   border-radius: 1em;
+}
+
+@media (min-width: 1200px) {
+  .lecture-chapter-grid {
+    grid-template-areas: "a a a a";
+  }
+}
+
+@media (max-width: 800px) {
+  .lecture-chapter-grid {
+    grid-template-areas: "a a";
+  }
+}
+
+@media (max-width: 440px) {
+  .lecture-chapter-grid {
+    grid-template-areas: "a";
+  }
 }
 
 /* Footer */
