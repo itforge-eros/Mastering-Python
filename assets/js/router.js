@@ -27,7 +27,7 @@ async function render(url, el) {
     if (r.status === 200) {
       return r.text()
     }
-    return "Not Found!"
+    return `<p class="content-text-loading"><img class="content-image-loading" src="../assets/img/icon/notfound.png"></p><p class="content-text-loading">ไม่พบหน้าที่ต้องการ</p>`
   })
 
   let header = await fetch(`../data/heading/${url}.json`).then(r => {
@@ -53,6 +53,25 @@ async function render(url, el) {
   result = await md.render(result)
   el.innerHTML = result
 }
+
+// function setLoading() {
+//   let headingTitle = document.getElementById("header-title")
+//   let headingDescription = document.getElementById("header-description")
+//   let headingIcon = document.getElementById("header-icon")
+//   let contentArea = document.getElementById("content")
+//   let content = `<img class="content-image-loading" src="../assets/img/loading.svg"><p class="content-text-loading">กำลังโหลด...</p>`
+
+//   headingTitle.innerText = "กำลังโหลด"
+//   headingDescription.innerHTML = ""
+//   headingIcon.setAttribute("src", "../assets/img/loading.svg")
+//   contentArea.innerHTML = content
+// }
+
+// const menuChild = document.getElementsByClassName("menu-child")
+
+// for (let i = 0; i < menuChild.length; i++) {
+//   menuChild[i].addEventListener("click", setLoading)
+// }
 
 // Listen on hash change:
 window.addEventListener("hashchange", router)

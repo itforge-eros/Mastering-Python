@@ -91,16 +91,13 @@ body {
 }
 
 .header-image-wrapper {
+  text-align: center;
   grid-column: span 1;
 }
 
 .header-image {
   width: 60%;
   opacity: 0.2;
-}
-
-.header-image-loading {
-  height: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -192,6 +189,7 @@ li {
 }
 
 .content-image-loading {
+  width: 50% !important;
   max-height: 300px;
   opacity: 0.5;
 }

@@ -265,6 +265,7 @@ h2 {
   border-top: solid 1.5em;
   text-decoration: none;
   color: #000;
+  border-radius: 1em;
 }
 
 .lecture-chapter-box:visited,
@@ -289,17 +290,26 @@ h2 {
 
 .lecture-chapter-box-1 {
   border-top-color: #389fff;
-  border-radius: 1em;
 }
 
 .lecture-chapter-box-2 {
   border-top-color: #00ccba;
-  border-radius: 1em;
 }
 
 .lecture-chapter-box-3 {
   border-top-color: #f598eb;
-  border-radius: 1em;
+}
+
+.lecture-chapter-box-4 {
+  border-top-color: #f598eb;
+}
+
+.lecture-chapter-box-5 {
+  border-top-color: #f598eb;
+}
+
+.lecture-chapter-box-6 {
+  border-top-color: #f598eb;
 }
 
 @media (min-width: 1200px) {
