@@ -338,7 +338,12 @@ h2 {
   display: grid;
   grid-template-areas: "a a a";
   align-items: center;
+  grid-auto-columns: 1fr;
   height: 100px;
+}
+
+#footer > .child:nth-child(2) {
+  text-align: center;
 }
 
 #footer > .child:first-child {
