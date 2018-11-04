@@ -1,5 +1,5 @@
 # Python
-![](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+![](../assets/img/content/index01.png)
 
 ภาษา Python ได้รับความนิยมในการใช้งาน เนื่องจากการเขียนที่ง่าย และเรียนรู้ได้เร็ว Python จึงเป็นตัวเลือกแรกๆของการเขียนโปรแกรมในทุกสายงาน ตั้งแต่ Data Scientists, Programmer, Back-end Development เป็นต้น
 
@@ -10,28 +10,31 @@ Python ที่จะใช้ในการเรียนนี้จะเ�
 หากว่าการเขียนในบางจุดยังไม่เข้าใจดี หรือผิดพลาด ก็สามารถแจ้งปัญหา หรือ ซักถามได้ที่ [Issues]() ครับ
 
 ## เนื้อหาที่อยู่ใน Repository นี้
-**Fundamental Python**
+**Getting Start**
 * [Install Python](#/start/installation)
 * [Introduction](#/start/introduction)
+
+**Fundamental Python**
 * [Variables](#/fundamental/variable)
 * [I/O](#/fundamental/io)
 * [Operators](#/fundamental/operators)
 * [String](#/fundamental/string)
-* [Condition](#/flow/condition)
 * [Functions](#/fundamental/Function)
+
+**Flow Control**
+* [Condition](#/flow/condition)
 * [Loop](#/flow/loop)
+
+**Datatype**
 * [List](#/datatype/list)
 * [Dictionary](#/datatype/dictionary)
 
 **More on Python**
 * [Math Library](#/more/math)
-* [Built-in Functions](#/more/build-in)
-* [Built-in Methods](Python/BuildInMethod/)
+* [Built-in Functions](#/more/build-in-function)
 * [Dealing with PyLint + PEP8](#/more/pylint)
 
 **Advanced Python**
-* [Python Runtime](Python/Runtime/)
 * [Try and Except](#/advance/try-except)
-* [Raising and Catching Exceptions](Python/Exception/)
 * [Class and Objects](#/advance/class)
 * [Files](#/advance/file)
