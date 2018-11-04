@@ -22,7 +22,7 @@ function router() {
 }
 
 async function render(url, el) {
-  url = url || "index"
+  url = url || "home"
   let result = await fetch(`../data/content/${url}.md`).then(r => {
     if (r.status === 200) {
       return r.text()
