@@ -219,6 +219,7 @@ code {
   background-color: #003a71;
   display: grid;
   grid-template-areas: "a a a";
+  grid-auto-columns: 1fr;
   align-items: center;
   height: 100px;
 }
