@@ -6,7 +6,7 @@ Loop คือการทำซำ้ ๆ ซึ่งสามารถกำ�
 
 ## While Loop
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/While-loop-diagram.svg/440px-While-loop-diagram.svg.png)
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/While-loop-diagram.svg/440px-While-loop-diagram.svg.png width="60%">
 
 *ภาพประกอบจาก Wikipedia.com*
 
