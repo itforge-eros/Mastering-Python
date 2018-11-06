@@ -1,5 +1,5 @@
 {
     "title": "Input and Output",
-    "description": "เนื่องจาก Python นั้นมีหลาย Platform มากทำให้นักพัฒนาได้เปิดให้พวกเราดาวน์โหลด Python ลงเครื่องนะครับ",
+    "description": "ในการเขียน  Program code ขึ้นมาให้สมบูรณ์นั้น จะต้อง มี Input และ Output นั้นเองซึ่ง Input จะเป็นการรับค่าเข้ามาใน Program ส่วน Output คือการแสดงผลออกมา",
     "icon": "io.png"
 }
