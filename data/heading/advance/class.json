@@ -1,5 +1,5 @@
 {
     "title": "Class",
-    "description": "เนื่องจาก Python นั้นมีหลาย Platform มากทำให้นักพัฒนาได้เปิดให้พวกเราดาวน์โหลด Python ลงเครื่องนะครับ",
+    "description": "เป็นหลักการที่นำ Python มาเขียนอยู่ในหลักการของ OOP (Object Oreinted Program)",
     "icon": "class.png"
 }

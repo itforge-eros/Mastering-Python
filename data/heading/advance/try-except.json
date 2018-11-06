@@ -1,5 +1,5 @@
 {
     "title": "Try and Except",
-    "description": "เนื่องจาก Python นั้นมีหลาย Platform มากทำให้นักพัฒนาได้เปิดให้พวกเราดาวน์โหลด Python ลงเครื่องนะครับ",
+    "description": "เป็นการรับมือกับ Error ต่างๆในขณะที่ Execute Program อยู่",
     "icon": "trycatch.png"
 }
