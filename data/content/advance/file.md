@@ -1,29 +1,96 @@
-# File Manipulation
+# File
+
+ในภาษาโปรแกรมมิ่งนั้น จะมีสิ่งที่เราเรียกว่าการจัดการไฟล์อยู่ ไม่ว่าจะเป็นการอ่านหรือเขียนไฟล์ ซึ่งในภาษา Python ก็สามารถทำได้เหมือนกัน
+
+เริ่มจากการอ่านไฟล์ เราสามารถใช้ฟังก์ชัน `open()` ได้ ดังนี้
 
 ```python
-file_variable = open("file_name.txt", "w")
-
-file_variable.write("Hello World")
-
-file_variable.close()
+file_data = open("file_name.txt")
 ```
 
-Program need to close the file. Because when you write something, it keeps it in buffer, not the actual file. By closing it, the Python script will save the buffer (write) to the according file
+## File Opening Modes
+
+โดยฟังก์ชัน `open()` นั้นเราสามารถใส่ argument ที่สองลงไปได้ ซึ่งจะบ่งบอกถึงการกระทำที่เราต้องการจะทำกับไฟล์น้ัน ๆ ยกตัวอย่างดังนี้
+
+|ตัวอักษร|ความหมาย|
+|:-:|:-|
+|r|อ่านไฟล์ (default)|
+|w|เขียนไฟล์ โดยเคลียร์ข้อมูลไฟล์เดิมก่อนเริ่มเขียน|
+|a|เขียนไฟล์ โดยเพิ่มข้อมูลเข้าไปต่อท้ายไฟล์เดิม|
+|b|โหมดเลขฐานสอง|
+|t|โหมดตัวหนังสือ (default)|
+|+|อ่านไฟล์จากดิสก์เพื่ออัปเดตไฟล์ (ใช้คู่กับ r หรือ w)|
+
+โดยวิธีการใช้คือ เรานำตัวอักษรที่ต้องการมาใส่ String และโยน String นั้น ๆ ไปเป็น argument ได้เลย (แต่อาจมีข้อจำกัดบางอย่างอยู่ เช่น บางตัวอักษรไม่สามารถใช้ด้วยกันได้) เราจะสามารถใช้ได้ ดังตัวอย่างนี้
 
 ```python
-file1 = open("test.txt", "r+w")
-file2 = open("test2.txt", "r+w")
+# แบบไม่ใส่ argument โปรแกรมจะมองเป็น 'rt'
+file_a = open("file_a.txt")    
 
-file1.write("Hello")
-file2.write("Hello")
+# แบบใส่ argument ตัวเดียว
+file_b = open("file_b.txt", "w")
 
-file1.close()
+# แบบใส่ argument มากกว่าหนึ่งตัว
+file_c = open("file_b.txt", "+a")
+file_d = open("file_b.txt", "+wt") 
 ```
-The file `file2` will not be saved. Because the file is not closed. Thus the program is not saved.
 
-### Another way to write file
+## File Reading
+
+เริ่มจากการอ่านไฟล์ปกติ เพื่อนำข้อมูลจากไฟล์มาใช้ในโปรแกรม
+
 ```python
-with open("file_name.txt", "w") as file_variable:
-    file_variale.write("Hello World")
+my_file = open("data.txt")
+print(my_file)
 ```
-By using `with` and `as` keyword, this script will automaticaly close the program
+
+```
+<_io.TextIOWrapper name='file.txt' mode='r' encoding='UTF-8'>
+```
+
+หากเราลองนำไฟล์ที่เราอ่าน มาใส่ฟังก์ชัน `print()` เพื่อแสดงผล จะเห็นว่าไฟล์นั้นจะอยู่ในรูปของ object ประเภทไฟล์ 
+
+โดยหากเราต้องการนำไฟล์นี้มาเก็บเป็น List เพื่อที่เราจะได้ดึงข้อมูลมาได้ง่ายขึ้น เราสามารถใช้ฟังก์ชัน `list()` เพื่อแปลงชนิดได้ เนื่องจากไฟล์นั้นก็เป็น sequence ชนิดหนึ่ง โดยเก็บเป็นบรรทัดต่อบรรทัด ดังตัวอย่าง
+
+```python
+data = list(open("data.txt"))
+```
+
+## File Writing
+
+ต่อมาเราสามารถเขียนไฟล์ได้ โดยใช้เมธอด `.write()` ของ object ประเภทไฟล์ เมธอดนี้จะทำการเขียนข้อมูลลงไปในไฟล์ตาม argument ที่ใส่ไปในเมธอดนี้
+
+```python
+my_file = open('data.txt', 'w')
+my_file.write("Python\n")
+my_file.write("Java\n")
+my_file.write("Swift")
+```
+
+หลังจบโปรแกรม ไม่ว่าไฟล์จะเคยมีข้อมูลอะไรเก็บอยู่ ข้อมูลใหม่ในไฟล์จะเป็นดังนี้
+
+```
+Python
+Java
+Swift
+```
+
+หากสรุปการเขียนไฟล์ในแต่ละโหมดจะได้ดีงนี้
+
+|โหมด|ผลลัพธ์|
+|:---:|:---|
+|w และ +w|เคลียร์ข้อมูลไฟล์เดิม และเริ่มเขียนใหม่|
+|a และ +a|เขียนข้อมูลต่อจากไฟล์เดิม|
+|+r|เขียนข้อมูลทับไฟล์เดิมบางส่วน แต่ไม่เคลียร์ไฟล์เดิม (ไม่แนะนำ)|
+
+## Closing
+
+โดย object ประเภทไฟล์จะมีเมธอดอีกหนึ่ง ชื่อว่า `.close()` ทำหน้าที่ปิดการเขียนไฟล์นั้น ๆ จะทำให้เราไม่สามารถเขียนไฟล์นั้นได้อีก
+
+```python
+my_file = open('data.txt', 'w')
+my_file.write("Python\n")
+my_file.write("Java\n")
+my_file.write("Swift")
+my_file.close()
+```

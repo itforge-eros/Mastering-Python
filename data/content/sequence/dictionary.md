@@ -15,34 +15,25 @@ Dictionary เป็นการเก็บข้อมูลประเภท
 
 ## สร้าง Dictionary
 
-### สร้าง Dictionary เปล่า
-
 เราสามารถสร้างตัว Dictionary ใหม่โดยการใช้ฟังก์ชัน `dict()` เพื่อเปลี่ยนตัวแปรให้เก็บข้อมูลแบบ Dictionary และสร้่าง Dictionary เปล่า ๆ ขึ้นมา 1 อัน
 
 ตัวอย่างการเขียน
 
 ```python
-my_dictionary = dict()
+my_dictionary = dict() # Empty dictionary
 ```
-
-### สร้าง Dictionary โดยการเขียนเอง
-
-โดยฝั่งซ้ายจะเป็นค่า key และฝั่งขวาจะเป็นค่า value
-
 ```python
 my_dictionary = {
 "happy" : 20,
 "not happy" : 30,
 "sad" : False
 }
-
+```
+```python
 my_dictionary = {"happy" : 20, "not happy" : 30, "sad" : False}
-
 ```
 
-โดยเราอาจจะเขียนแบบที่ 1 ที่จะแยกบรรทัด หรือเขียนแบบบรรทัดเดียวกันก็ได้ครับ
-
-แต่เขียนไปเป็นหลายบรรทัด เราจะสามารถอ่านมันได้ง่ายขึ้นครับ จึงเหมาะกับคนที่ไม่ชอบอ่านโค้ดยาก ๆ ยาว ๆ
+ซึ่งเราสามารถเขียนแบบแยกบรรทัด หรือรวมเป็นบรรทัดเดียวก็ได้ครับ
 
 ---
 
@@ -155,8 +146,7 @@ NameError: name 'mydict' is not defined
 
 ## เช็คค่า Keys และ Values ที่อยู่ใน Dictionary
 
-เราสามารถใช้ `.keys()` สำหรับการดูค่า keys ทั้งหมดใน Dictionary<br>
-และใช้ `.values()` เพื่อดูค่า values ทั้งหมดใน Dictionary
+เราสามารถใช้ `.keys()` สำหรับการดูค่า keys ทั้งหมดใน Dictionary และใช้ `.values()` เพื่อดูค่า values ทั้งหมดใน Dictionary
 
 ตัวอย่างการใช้งาน
 
