@@ -8,7 +8,6 @@ body {
 }
 
 /* Keyframe */
-
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -111,7 +110,6 @@ body {
 }
 
 /* Content */
-
 .container {
   display: grid;
   grid-auto-columns: 1fr;
@@ -207,7 +205,6 @@ li {
 }
 
 /* Code */
-
 code {
   font-size: 1.3em;
 }
