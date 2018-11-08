@@ -159,7 +159,6 @@ h2 {
 }
 
 /* Before Start */
-
 #before-start {
   width: 100%;
   padding-top: 50px;
@@ -234,7 +233,6 @@ h2 {
 }
 
 /* Lectures */
-
 #lecture {
   width: 100%;
   padding: 3em 0 6em 0;
@@ -288,7 +286,7 @@ h2 {
 .lecture-chapter-box {
   margin: 1em;
   text-align: center;
-  box-shadow: 0px 0px 100px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.25);
   border-top: solid 1.5em;
   text-decoration: none;
   color: #000;
@@ -355,6 +353,14 @@ h2 {
   .lecture-chapter-grid {
     grid-template-areas: "a";
   }
+}
+
+.hover-grow {
+  transition: 0.25s;
+}
+
+.hover-grow:hover, .hover-grow:focus, .hover-grow:active {
+  transform: scale(1.04);
 }
 
 /* Footer */
