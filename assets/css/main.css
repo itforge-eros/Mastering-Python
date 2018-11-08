@@ -319,6 +319,7 @@ h2 {
 
 .lecture-chapter-box-2 {
   border-top-color: #00ccba;
+  /* border-top-color: #6096BA; */
 }
 
 .lecture-chapter-box-3 {
@@ -326,7 +327,9 @@ h2 {
 }
 
 .lecture-chapter-box-4 {
-  border-top-color: #ffdb0b;
+  /* border-top-color: #ffdb0b; */
+  border-top-color: #6096BA;
+
 }
 
 .lecture-chapter-box-5 {

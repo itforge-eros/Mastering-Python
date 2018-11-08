@@ -2,5 +2,5 @@
     "title": "String Slicing",
     "description": "เป็นการตัดทอน String โดยยึดจากจุดเริ่มต้น สิ้นสุด และ Step",
     "icon": "string-slicing.png",
-    "color" : "#ffdb0b"
+    "color" : "#6096BA"
 }
