@@ -1,5 +1,6 @@
 {
     "title": "Input and Output",
     "description": "ในการเขียน  Program code ขึ้นมาให้สมบูรณ์นั้น จะต้อง มี Input และ Output นั้นเองซึ่ง Input จะเป็นการรับค่าเข้ามาใน Program ส่วน Output คือการแสดงผลออกมา",
-    "icon": "io.png"
+    "icon": "io.png",
+    "color" : "#00ccba"
 }

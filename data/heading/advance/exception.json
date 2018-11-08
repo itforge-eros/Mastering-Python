@@ -1,5 +1,6 @@
 {
     "title": "Exceptions",
     "description": "ประเภทของ Exception (Error) ต่างๆ ที่มักจะเกิดขึ้นเมื่อ Run Program",
-    "icon": "exception.png"
+    "icon": "exception.png",
+    "color" : "#533a71"
 }

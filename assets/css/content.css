@@ -146,10 +146,14 @@ a:visited {
 .menu-child > a {
   color: #000;
   text-decoration: none;
+  transition: 0.15s;
 }
 
-.menu-child > a:focus {
+.menu-child > a:focus,
+.menu-child > a:active,
+.menu-child > a:hover {
   outline: none;
+  color: #389fff !important;
 }
 
 .menu-child > a:visited {
@@ -157,6 +161,7 @@ a:visited {
   text-decoration: none;
 }
 
+/* Content */
 #content {
   grid-column: span 3;
   font-family: "Kanit", sans-serif;
@@ -211,14 +216,6 @@ li {
     width: 70%;
     margin: 0 auto;
   }
-}
-
-.hover-highlight {
-  transition: 0.15s;
-}
-
-.hover-highlight:hover, .hover-highlight:focus, .hover-highlight:active {
-  color: #389fff;
 }
 
 /* Code */

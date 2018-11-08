@@ -44,9 +44,11 @@ async function render(url, el) {
   let headingTitle = document.getElementById("header-title")
   let headingDescription = document.getElementById("header-description")
   let headingIcon = document.getElementById("header-icon")
+  let headerContainer = document.getElementById("header")
 
   headingTitle.innerText = header.title
   headingDescription.innerHTML = header.description
+  headerContainer.style.backgroundColor = header.color
   headingIcon.setAttribute("src", `../assets/img/icon/${header.icon}`)
   headingIcon.setAttribute("class", "header-image")
 

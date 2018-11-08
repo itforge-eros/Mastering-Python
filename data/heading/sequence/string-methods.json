@@ -1,5 +1,6 @@
 {
     "title": "String Methods",
     "description": "เป็นรูปแบบหรือวิธีที่เราสามารถเรียกดูหรือจัดการกับ String ของเราได้",
-    "icon": "string-methods.png"
+    "icon": "string-methods.png",
+    "color" : "#ffdb0b"
 }
