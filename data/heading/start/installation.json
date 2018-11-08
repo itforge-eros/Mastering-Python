@@ -1,5 +1,6 @@
 {
     "title": "Installation",
     "description": "เนื่องจาก Python นั้นมีหลายแพลตฟอร์มมาก ทำให้นักพัฒนาได้เปิดให้พวกเราดาวน์โหลด Python ลงเครื่องนะครับ",
-    "icon": "install.png"
+    "icon": "install.png",
+    "color" : "#389fff"
 }

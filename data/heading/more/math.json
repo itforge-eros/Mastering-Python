@@ -1,5 +1,6 @@
 {
     "title": "Math Library",
     "description": "เป็น Library เสริมของ Python ที่นิยมใช้กันบ่อยซึ่งจะมี เครื่องมือทางคณิตศาสตร์มาอำนวยความสะดวกและเขียนโปรแกรมได้ง่ายขึ้น",
-    "icon": "mathlib.png"
+    "icon": "mathlib.png",
+    "color" : "#5d576b"
 }

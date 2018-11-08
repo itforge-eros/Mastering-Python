@@ -1,5 +1,6 @@
 {
     "title": "Dictionary",
     "description": "เป็นตัวแปลอ้างอิงชนิดนึงของ Python ที่เก็บข้อมูลเป็นรูปแบบ Key และ Value ต่างจาก List และ Tuple ที่จะเก็บข้อมูลเรียงต่อกันไปเรื่อยๆ",
-    "icon": "dict.png"
+    "icon": "dict.png",
+    "color" : "#ffdb0b"
 }

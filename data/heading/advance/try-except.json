@@ -1,5 +1,6 @@
 {
     "title": "Try and Except",
     "description": "เป็นการรับมือกับ Error ต่างๆในขณะที่ Execute Program อยู่",
-    "icon": "trycatch.png"
+    "icon": "trycatch.png",
+    "color" : "#533a71"
 }

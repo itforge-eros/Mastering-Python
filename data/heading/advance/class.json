@@ -1,5 +1,6 @@
 {
     "title": "Class",
     "description": "เป็นหลักการที่นำ Python มาเขียนอยู่ในหลักการของ OOP (Object Oreinted Program)",
-    "icon": "class.png"
+    "icon": "class.png",
+    "color" : "#533a71"
 }

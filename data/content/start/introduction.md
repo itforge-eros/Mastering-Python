@@ -29,7 +29,7 @@ print(
 
 เรื่มแรก ก็คือลองให้ Python คำนวณเลขดูครับ เช่น
 ```
-2 + 2 
+2 + 2
 ```
 เราก็คงรู้คำตอบว่าเท่ากับอะไร แต่ลองดูครับ ว่า Python บอกว่าเท่ากับเท่าไหร่<br>
 โดยการเอาไปแปะใน `print()` แบบนี้ครับ
@@ -46,7 +46,7 @@ print(2 + 2)
 2 + 2 - 1
 ```
 
-## Equation Logic 
+## Equation Logic
 ก็เป็นเนื้อหาอันสุดท้ายใน lecture นี้แล้ว นั่นก็คือการเทียบสมการครับ<br>
 
 เพื่อจะทดสอบ ก็ให้คัดลอก Code เหมือนเดิมครับ
@@ -63,5 +63,3 @@ print(bool3)
 print(bool4)
 print(bool5)
 ```
-
-[DocString](Python/Introduction/Docstring/)  [Logical Operator](Python/Introduction/LogicalOperator/)  [Variable](Python/Introduction/Variable/)
