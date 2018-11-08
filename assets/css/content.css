@@ -7,6 +7,15 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+  color: #389fff;
+}
+
+a:visited {
+  color: #533a71;
+}
+
 /* Keyframe */
 @keyframes spin {
   0% {
@@ -202,6 +211,14 @@ li {
     width: 70%;
     margin: 0 auto;
   }
+}
+
+.hover-highlight {
+  transition: 0.15s;
+}
+
+.hover-highlight:hover, .hover-highlight:focus, .hover-highlight:active {
+  color: #389fff;
 }
 
 /* Code */
