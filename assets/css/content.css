@@ -169,6 +169,14 @@ a:visited {
   padding-bottom: 5em;
 }
 
+#content > table {
+  font-weight: 200;
+}
+
+#content th {
+  font-weight: 400;
+}
+
 #content > * {
   margin-left: 50px;
   margin-right: 50px;
