@@ -18,23 +18,27 @@ Python ที่จะใช้ในการเรียนนี้จะเ�
 * [Variables](#/fundamental/variable)
 * [I/O](#/fundamental/io)
 * [Operators](#/fundamental/operators)
-* [String](#/fundamental/string)
-* [Functions](#/fundamental/Function)
+* [Logical Operators](#/fundamental/logical-operators)
+* [String Basics](#/fundamental/string)
+* [String Format](#/fundamental/string-format)
+* [Functions](#/fundamental/function)
 
 **Flow Control**
-* [Condition](#/flow/condition)
+* [Condition](#/flow/conditions)
 * [Loop](#/flow/loop)
 
-**Datatype**
+**Sequence**
+* [String Slicing](#/datatype/string-slicing)
+* [String Methods](#/datatype/string-methods)
 * [List](#/datatype/list)
+* [Tuple](#/datatype/tuple)
 * [Dictionary](#/datatype/dictionary)
 
 **More on Python**
 * [Math Library](#/more/math)
-* [Built-in Functions](#/more/build-in-function)
-* [Dealing with PyLint + PEP8](#/more/pylint)
+* [Built-in Functions](#/more/built-in-function)
+* [Pylint + PEP8](#/more/pylint)
 
 **Advanced Python**
 * [Try and Except](#/advance/try-except)
-* [Class and Objects](#/advance/class)
-* [Files](#/advance/file)
+* [File](#/advance/file)
