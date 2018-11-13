@@ -1,9 +1,11 @@
 # Mastering Python
 
-<img src="assets/img/header.png" width="60%">
+<img src="assets/img/header.png" width="70%">
 
 ## Information
 โครงงานเว็บไซต์สอนการเขียนโปรแกรมพื้นฐานภาษา Python “Mastering Python” นี้ เป็นส่วนหนึ่งของของวิชา Web Technology (06016312) คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (IT KMITL)
+
+โดยเว็บไซต์โครงงานสามารถดูได้ที่ [python.itforge.io](https://python.itforge.io/)
 
 ## Objectives
 - เพื่อเป็นจุดเริ่มต้นในการเรียนรู้สำหรับบุคคลที่สนใจในการเขียนโปรแกรม
