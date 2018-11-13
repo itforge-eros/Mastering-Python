@@ -243,14 +243,24 @@ code {
   height: 100px;
 }
 
-#footer > .child:nth-child(2) {
-  text-align: center;
-}
-
 #footer > .child:first-child {
   padding-left: 2em;
 }
 
 #footer > .child:first-child > div {
   display: inline;
+}
+
+#footer > .child:nth-child(2) {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+#footer > .child:nth-child(2) > a > i.icon {
+  color: #fff;
+  transition: 0.2s;
+}
+
+#footer > .child:nth-child(2) > a > i.icon:hover {
+  transform: scale(1.08)
 }
