@@ -5,7 +5,7 @@
 ## Information
 โครงงานเว็บไซต์สอนการเขียนโปรแกรมพื้นฐานภาษา Python “Mastering Python” นี้ เป็นส่วนหนึ่งของของวิชา Web Technology (06016312) คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (IT KMITL)
 
-โดยเว็บไซต์โครงงานสามารถดูได้ที่ [python.itforge.io](https://python.itforge.io/)
+โดยเว็บไซต์โครงงานสามารถดูได้ที่ [itforge-eros.github.io/mastering-python](https://itforge-eros.github.io/mastering-python/)
 
 ## Objectives
 - เพื่อเป็นจุดเริ่มต้นในการเรียนรู้สำหรับบุคคลที่สนใจในการเขียนโปรแกรม
